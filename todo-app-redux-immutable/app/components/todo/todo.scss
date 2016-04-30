@@ -1,0 +1,126 @@
+
+// Colors
+// ----------------------------------------
+
+// Theme Colors
+$theme-purple: #2e1e42;
+$theme-green: #50b475;
+$theme-toggled: rgba($theme-green, 0.3);
+
+// Base Colors
+$base-white: #fff;
+$base-black: #111;
+
+// App Colors
+$primary-background-color: #fafafa;
+$primary-foreground-color: $base-white;
+$primary-accent-color: $theme-green;
+$primary-shadow-color: #000;
+
+
+// Transitions
+// ----------------------------------------
+
+// Timing Functions
+$ease-in-out: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+
+
+// Borders
+// ----------------------------------------
+
+$base-border-width: 1px;
+$border-width-2: 2px;
+$base-radius: 4px;
+$default-border-style: solid;
+$default-border: $base-border-width $default-border-style;
+
+// Elevation
+// ----------------------------------------
+
+$floating-2-shadow:
+  0 1px 60px rgba($primary-shadow-color, 0.25),
+  0 0 3px rgba($primary-shadow-color, 0.1)
+;
+
+// Spacing
+// ----------------------------------------
+$spacing-base: 4px;
+$spacing-multiplier: 2;
+
+$spacing-1: $spacing-base * $spacing-multiplier;
+$spacing-2: $spacing-1 * $spacing-multiplier;
+$spacing-3: $spacing-2 * $spacing-multiplier;
+$spacing-4: $spacing-3 * $spacing-multiplier;
+
+
+
+// Base Application
+// ----------------------------------------
+
+body {
+  background: $primary-background-color;
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.app {
+  $max-width: 300px;
+  $min-height: 350px;
+
+  background-color: $primary-foreground-color;
+  border-radius: $base-radius;
+  box-shadow: $floating-2-shadow;
+  color: $primary-accent-color;
+  margin: $spacing-4 auto;
+  max-width: $max-width;
+  min-height: $min-height;
+  width: 100%;
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 400;
+    text-align: center;
+  }
+
+  input {
+    margin: $spacing-1;
+  }
+}
+
+.header {
+  background-color: $primary-accent-color;
+  border-top-left-radius: $base-radius;
+  border-top-right-radius: $base-radius;
+  color: $base-white;
+  padding: $spacing-2;
+}
+
+.todo-item {
+  $transition-property: color;
+  $transition-duration: 200ms;
+
+  color: $primary-accent-color;
+  transition: $transition-property $transition-duration $ease-in-out;
+
+  &--is-completed {
+    text-decoration: line-through;
+    color: $theme-toggled;
+    transition: $transition-property $transition-duration $ease-in-out;
+  }
+}
+
+.todo-list {
+  list-style-type: none;
+  margin-bottom: 10px;
+  padding: $spacing-2;
+
+  button {
+    margin-right: 15px;
+  }
+}
