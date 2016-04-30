@@ -17,6 +17,12 @@ store.dispatch(loadTodos([{
 }, {
   item: 'Learn Flux',
   selected: false
+}, {
+  item: 'Learn Redux',
+  selected: false
+}, {
+  item: 'Learn Immutable.js',
+  selected: false
 }]));
 
 ReactDOM.render(
