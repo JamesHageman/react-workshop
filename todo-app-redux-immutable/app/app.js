@@ -4,11 +4,11 @@ import Todo from './components/todo/todo';
 import './components/todo/todo.scss';
 
 import { createStore } from 'redux';
-import rootReducer from './reducers/index.js';
 import { Provider } from 'react-redux'
 import { loadTodos } from './actions/TodoActions.js';
+import configureStore from './store/configure-store.js';
 
-const store = createStore(rootReducer);
+const store = configureStore();
 const mountNode = document.getElementById('app');
 
 store.dispatch(loadTodos([{
