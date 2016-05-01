@@ -19,7 +19,7 @@ describe('todo-list', () => {
       "selected": false
     }, {
       "item": "test 2",
-      "selected": false
+      "selected": true
     }]);
 
     _onDelete = expect.createSpy();

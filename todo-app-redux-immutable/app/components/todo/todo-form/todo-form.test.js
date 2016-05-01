@@ -35,5 +35,16 @@ describe('todo-form', () => {
     expect(input.value).toEqual('');
 
   });
+
+  it('does not call save if no text is entered', () => {
+    var input = node.querySelector('input');
+
+    input.value = '';
+
+    TestUtils.Simulate.change(input);
+    TestUtils.Simulate.keyDown(input, {key: "Enter", keyCode: 13, which: 13});
+
+    expect(_handleSave.calls.length).toEqual(0);
+  })
 });
 
